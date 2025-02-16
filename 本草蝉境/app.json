@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/medicine/medicine",
+    "pages/acupoint/acupoint",
+    "pages/meditation/meditation",
+    "pages/forum/forum",
+    "pages/herbs/herbs",
+    "pages/acupoint-details/acupoint-details"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "本草蝉境",
+    "navigationBarBackgroundColor": "#ded7ab"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页",
+        "iconPath": "/images/icon .png",
+        "selectedIconPath": "/images/selected .png"
+      },
+      {
+        "pagePath": "pages/medicine/medicine",
+        "text": "药材"
+      },
+      {
+        "pagePath": "pages/acupoint/acupoint",
+        "text": "穴位"
+      },
+      {
+        "pagePath": "pages/meditation/meditation",
+        "text": "冥想"
+      },
+      {
+        "pagePath": "pages/forum/forum",
+        "text": "论坛"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

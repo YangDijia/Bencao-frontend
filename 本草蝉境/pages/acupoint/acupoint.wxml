@@ -1,0 +1,10 @@
+<!--pages/acupoint/acupoint.wxml-->
+<view class="container">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true">
+    <block wx:for="{{images}}" wx:key="index">
+      <swiper-item bindtap="navigateToDetail" data-id="{{item.id}}">
+        <image class="swiper-image" src="{{item.src}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

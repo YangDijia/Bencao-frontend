@@ -1,0 +1,52 @@
+/* pages/homepage/homepage.wxss */
+
+/*top*/
+.logo-container {
+  background-color: #f5f5f5;
+  padding: 20rpx;
+}
+
+.logo {
+  height: 300rpx;
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+/*mid*/
+.blocks-container1 {
+  height:400rpx;
+  width: 100%;
+  display: flex;
+  padding: 20rpx 10rpx;
+}
+.blocks-item {
+  width: 50%;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blocks-image {
+  width: 90%;
+  height: 90%;
+  border-radius: 10rpx;
+}
+
+/*bottom*/
+.blocks-container2 {
+  padding: 20rpx;
+}
+
+.blocks-meditation {
+  height:300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blocks-text {
+  font-size: 24rpx;
+}

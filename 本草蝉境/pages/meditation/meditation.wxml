@@ -1,0 +1,22 @@
+<!--pages/meditation/meditation.wxml-->
+<view class="container">
+  <view class="top-bar"></view>
+  <view class="content">
+    <image class="circle-image" src="/images/icon .png" mode="aspectFill"></image>
+    <text class="description">名称</text>
+  
+    <view class="slider-container">
+      <text>人声: {{voiceVolume}}</text>
+      <slider min="0" max="100" value="{{voiceVolume}}" bindchange="onVoiceVolumeChange"></slider>
+    </view>
+    
+    <view class="slider-container">
+      <text>环境: {{ambientVolume}}</text>
+      <slider min="0" max="100" value="{{ambientVolume}}" bindchange="onAmbientVolumeChange"></slider>
+    </view>
+    
+    <button class="pause-button" bindtap="onPause">
+      <text>{{isPaused ? '继续' : '暂停'}}</text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/homepage/homepage.wxml-->
+
+<!--top-logo-->
+<view class="logo-container">
+  <image class="logo" src="{{logoRoute}}" mode="aspectFill"/>
+</view>
+
+<!--mid-->
+<view class="blocks-container1">
+  <view class="blocks-item" bindtap="navigateToMedicine">
+    <image class="blocks-image" src="{{medicine}}" mode="aspectFill"/>
+    <text class="blocks-text">药品</text>
+  </view>
+  <view class="blocks-item" bindtap="navigateToAcupoint">
+    <image class="blocks-image" src="{{acupoint}}" mode="aspectFill"/>
+    <text class="blocks-text">穴位</text>
+  </view>
+</view>
+
+<!--bottom-->
+<view class="blocks-container2">
+  <view class="blocks-meditation" bindtap="navigateToMeditation">
+    <image src="{{meditation}}" mode="aspectFill"/>
+    <text class="blocks-text">冥想</text>
+  </view>
+</view>
