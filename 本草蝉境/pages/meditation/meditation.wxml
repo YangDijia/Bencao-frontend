@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="content">
+    <image class="circle-image" src="/images/icon .png" mode="aspectFill"></image>
+    <text class="description">名称</text>
+  
+    <!-- 主页面音频控制 -->
+    <block wx:for="{{mainAudioList}}" wx:key="id">
+      <view class="slider-container">
+        <text>{{item.name}}: {{item.volume}}</text>
+        <slider 
+          min="0" 
+          max="100" 
+          value="{{item.volume}}" 
+          bindchange="onVolumeChange"
+          data-id="{{item.id}}"
+        ></slider>
+      </view>
+    </block>
+    
+    <button class="pause-button" bindtap="onPause">
+      <text>{{isPaused ? '继续' : '暂停'}}</text>
+    </button>
+
+    <view class="modal-container">
+      <button bindtap="showModal">更多声音设置</button>
+      <view class="modal" wx:if="{{isModalVisible}}">
+        <view class="modal-content">
+          <import src="/wxml/meditation-more.wxml"/>
+          <template is="meditation-more" data="{{moreAudioList, onVolumeChange}}"/>
+          <button bindtap="hideModal">关闭</button>
+        </view>
+      </view> 
+    </view>
+  </view>
+</view>
