@@ -1,8 +1,8 @@
 <!--pages/medicine/medicine.wxml-->
 <view class="container">
   <scroll-view scroll-y="true" class="herb-list">
-    <block wx:for="{{herbs}}" wx:key="index">
-      <view class="herb-item" bindtap="navigateToDetail" data-index="{{index}}">
+    <block wx:for="{{herbs}}" wx:key="id">
+      <view class="herb-item" bindtap="navigateToDetail" data-herb="{{item}}">
         <image class="herb-image" src="{{item.image}}" mode="aspectFill"></image>
       </view>
     </block>

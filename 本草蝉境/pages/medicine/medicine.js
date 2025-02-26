@@ -6,22 +6,22 @@ Page({
    */
   data: {
     herbs: [
-      { image: '/images/1.jpg' },
-      { image: '/images/2.png' },
-      { image: '/images/3.jpeg' },
-      { image: '/images/4.jpg' },
-      { image: '/images/5.png' },
-      { image: '/images/6.jpg' },
-      { image: '/images/7.jpg' },
-      { image: '/images/8.jpg' },
-      { image: '/images/9.jpg' },
-      { image: '/images/10.jpg' },
+      { id:1,image: '/images/1.jpg' },
+      { id:2,image: '/images/2.png' },
+      { id:3,image: '/images/3.jpeg' },
+      { id:4,image: '/images/4.jpg' },
+      { id:5,image: '/images/5.png' },
+      { id:6,image: '/images/6.jpg' },
+      { id:7,image: '/images/7.jpg' },
+      { id:8,image: '/images/8.jpg' },
+      { id:9,image: '/images/9.jpg' },
+      { id:10,image: '/images/10.jpg' },
     ]
   },
   navigateToDetail(event) {
-    const index = event.currentTarget.dataset.index;
+    const herb = event.currentTarget.dataset.herb;
     wx.navigateTo({
-      url: `/pages/herbs/herbs?index=${index}`
+      url: `/pages/herbs/herbs?id=${herb.id}`
     });
   },
 
