@@ -1,0 +1,34 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input type="text" placeholder="请输入搜索内容" bindinput="onSearchInput"/>
+  </view>
+
+  <view class="recomended-container">
+    <view class="recomended">
+      <image class="recomended-pic" src="/images/7.jpg" mode="aspectFill"/>
+    </view>
+    <view class="recomended">
+      <image class="recomended-pic" src="/images/7.jpg" mode="aspectFill"/>
+    </view>
+    <view class="recomended">
+      <image class="recomended-pic" src="/images/7.jpg" mode="aspectFill"/>
+    </view>
+    <view class="recomended">
+      <image class="recomended-pic" src="/images/7.jpg" mode="aspectFill"/>
+    </view>
+  </view>
+
+  <!-- scroll-view 列表 -->
+  <scroll-view class="scroll-list" scroll-y="true">
+    <block wx:for="{{books}}" wx:key="id">
+      <view class="book-item" bindtap="goToBookDetail" data-id="{{item.id}}">
+        <image class="book-image" src="{{item.image}}" mode="aspectFill"/>
+        <view class="book-info">
+          <text class="book-title">{{item.title}}</text>
+          <text class="book-description">{{item.description}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

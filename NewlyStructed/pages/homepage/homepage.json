@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "W",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#f5f5f5"
+  }
+}

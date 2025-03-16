@@ -1,0 +1,66 @@
+.container {
+  padding: 10px;
+}
+
+.search-bar {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.recomended-container {
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+}
+
+.recomended {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.recomended-pic {
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 20rpx;
+}
+
+.scroll-list {
+  max-height: 600px;
+}
+
+.book-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.book-image {
+  width: 80px;
+  height: 120px;
+  margin-right: 10px;
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.book-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}

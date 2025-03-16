@@ -1,0 +1,56 @@
+<view class="container">
+  <!-- 上部分 -->
+  <view class="top-section">
+    <view class="left">
+      <image class="avatar" src="/images/1.jpg" mode="aspectFill"></image>
+      <view class="intro-container">
+        <text class="intro">你好，我是一个锅。blablablablahahaha</text>
+      </view>
+    </view>
+    <view class="right">
+      <image class="calendar" src="/images/1.jpg" mode="aspectFill"></image>
+    </view>
+  </view>
+
+    <!-- 下部分 -->
+    <view class="bottom-section">
+    <swiper class="carousel" indicator-dots="true" autoplay="true">
+      <swiper-item>
+        <image class="carousel-item" src="/images/10.jpg" mode="aspectFill"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="carousel-item" src="/images/1.jpg" mode="aspectFill"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="carousel-item" src="/images/1.jpg" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+  <!-- 中部分 -->
+  <view class="middle-section">
+    <view class="row">
+      <view class="box" bindtap="goToMedicine">
+        <image class="box-image" src="/images/1.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="box" bindtap="goToFood">
+        <image class="box-image" src="/images/1.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="box" bindtap="goToStore">
+        <image class="box-image" src="/images/1.jpg" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="row">
+      <view class="square" bindtap="goToAIAssistant">
+        <text class="square-text">AIAssistant</text>
+      </view>
+      <view class="square" bindtap="goToBookshelf">
+        <text class="square-text">Bookshelf</text>
+      </view>
+      <view class="square" bindtap="goToElse">
+        <text class="square-text">Else</text>
+      </view>
+    </view>
+  </view>
+

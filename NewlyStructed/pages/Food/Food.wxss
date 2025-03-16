@@ -1,0 +1,80 @@
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 搜索条样式 */
+.search-bar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 20rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-input {
+  width: 100%;
+  height: 60rpx;
+  padding-left: 20rpx;
+  border-radius: 30rpx;
+  border: 1px solid #ddd;
+}
+
+/* 主体图片区域 */
+.image-section {
+  margin-top: 120rpx; /* 留出搜索栏空间 */
+  height: 500rpx;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 横向滑动的 List */
+.scroll-list {
+  display: inline-block;
+  white-space: nowrap; /* 防止子元素换行 */
+  height: 300rpx;
+  padding-left: 20rpx;
+  margin-top: 50rpx;
+}
+
+.list-item {
+  display: inline-block;
+  white-space: nowrap;
+  width: 150rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  background-color: #E5CAAC;
+  border-radius: 20rpx;
+}
+
+.child {
+  width: 100%;
+  display: flex;
+  margin-top: 20rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-image {
+  width: 120rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+}
+
+.item-name {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}

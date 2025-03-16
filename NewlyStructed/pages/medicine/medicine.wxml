@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索药材" bindinput="onSearchInput" />
+  </view>
+
+  <!-- 字母索引条 -->
+  <view class="index-bar">
+    <scroll-view scroll-y="true" class="index-list">
+      <block wx:for="{{letters}}" wx:key="index">
+        <view class="index-item" bindtap="onIndexClick" data-letter="{{item}}">
+          {{item}}
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 药材列表 -->
+  <scroll-view scroll-y="true" class="herb-list">
+    <block wx:for="{{herbs}}" wx:key="id">
+      <view class="herb-item" bindtap="navigateToDetail" data-id="{{item.id}}">
+        <image class="herb-image" src="{{item.image}}" mode="aspectFill"></image>
+        <text class="herb-name">{{item.name}}</text> <!-- 药材名称 -->
+      </view>
+    </block>
+  </scroll-view>
+</view>

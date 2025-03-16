@@ -1,0 +1,22 @@
+<view class="container">
+  <!-- 搜索条 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索" />
+  </view>
+
+  <!-- 主体部分的图片 -->
+  <view class="image-section">
+    <image class="main-image" src="/images/2.png" mode="aspectFill"/>
+  </view>
+
+  <!-- 横向滑动的List -->
+  <scroll-view scroll-x="true" class="scroll-list">
+    <view class="list-item" wx:for="{{items}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+      <view class="child">
+        <image class="item-image" src="{{item.image}}" mode="aspectFill"/>
+        <text class="item-name">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

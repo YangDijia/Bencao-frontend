@@ -1,0 +1,115 @@
+/* 基本样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #FFF7E7;
+}
+
+/* 上部分 */
+.top-section {
+  position: absolute;
+  top: 0;
+  height: 400rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20rpx;
+}
+
+.left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20%;
+  margin-bottom: 10rpx;
+}
+
+.intro-container {
+  margin-top: 20rpx;
+}
+
+.intro {
+  text-align: left;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.right {
+  width: 50%;
+  height: 320rpx;
+}
+
+.calendar {
+  width: 100%;
+  height: 100%;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 中部分 */
+.middle-section {
+  padding: 20rpx;
+  background-color: #FFF7E7;
+  
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.box {
+  width: 32%;
+  height: 270rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.box-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.square {
+  width: 32%;
+  height: 100rpx;
+  background-color: #F2E8DC;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square-text {
+  color: rgb(0, 0, 0);
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* 下部分 */
+.bottom-section {
+  margin-top: 200rpx;
+  width: 90%;
+  height: 100rpx;
+}
+
+.carousel {
+  width: 100%;
+  height: 200rpx;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
