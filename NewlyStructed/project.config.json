@@ -12,6 +12,7 @@
     "minified": true,
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
+    "packNpmManually": true,
     "packNpmRelationList": [],
     "babelSetting": {
       "ignore": [],
