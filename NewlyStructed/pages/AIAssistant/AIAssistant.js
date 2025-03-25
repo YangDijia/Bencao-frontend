@@ -1,66 +1,77 @@
-// pages/AIAssistant/AIAssistant.js
+// pages/chat/chat.js
 Page({
+  data: { messages: [], inputText: '', isLoading: false },
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+  async callDeepSeekAPI(prompt) {
+    try {
+      const res = await wx.request({
+        url: 'https://api.deepseek.com/v1/chat/completions',
+        method: 'POST',
+        header: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer sk-6658abd800cf4b6285e8c38335c3f04f',
+          'Accept': 'application/json'
+        },
+        data: {
+          model: "deepseek-chat",
+          messages: [{ role: "user", content: prompt }],
+          temperature: 0.7
+        },
+        timeout: 10000
+      });
 
+      console.log('[请求参数]', {
+        url: 'https://api.deepseek.com/v1/chat/completions',
+        data: { model: "deepseek-chat", messages: [ 
+          { role: "system", content: "你是一个 AI 助手" },
+          { role: "user", content: "如何学习编程？" }] }
+      });
+      console.log('[原始响应]', res);
+  
+      // --- 状态码处理优化 ---
+      if (res.statusCode !== 200) {
+        const errorMsg = res.data?.error?.message 
+          || `未知错误（状态码：${res.statusCode}）`;
+        throw new Error(`API 错误：${errorMsg}`);
+      }
+  
+      return res.data.choices[0].message.content;
+    } catch (err) {
+      // --- 错误对象增强 ---
+      console.error('[完整错误]', {
+        message: err.message,
+        stack: err.stack,
+        request: err.errMsg // 微信特有错误信息
+      });
+      return "服务异常，请检查控制台日志";
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
+  async sendMessage() {
+    if (!this.data.inputText.trim()) return;
+    
+    this.setData({ isLoading: true });
+    
+    const newMessages = [...this.data.messages, 
+      { id: Date.now(), role: 'user', content: this.data.inputText }
+    ];
+    this.setData({ messages: newMessages, inputText: '' });
 
+    try {
+      const answer = await this.callDeepSeekAPI(this.data.inputText);
+      this.setData({
+        messages: [...newMessages, 
+          { id: Date.now(), role: 'assistant', content: answer }
+        ]
+      });
+    } catch (err) {
+      wx.showToast({ title: '服务异常', icon: 'none' });
+    } finally {
+      this.setData({ isLoading: false });
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onInput(e) {
+    this.setData({ inputText: e.detail.value });
   }
-})
+});

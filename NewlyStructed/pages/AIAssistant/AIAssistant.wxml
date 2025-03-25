@@ -1,2 +1,22 @@
-<!--pages/AIAssistant/AIAssistant.wxml-->
-<text>pages/AIAssistant/AIAssistant.wxml</text>
+<!-- pages/chat/chat.wxml -->
+<view class="chat-container">
+  <!-- 对话历史 -->
+  <scroll-view scroll-y class="message-list">
+    <block wx:for="{{messages}}" wx:key="id">
+      <view class="message-item {{item.role}}">
+        <text class="content">{{item.content}}</text>
+      </view>
+    </block>
+    <view wx:if="{{isLoading}}" class="loading">思考中...</view>
+  </scroll-view>
+
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <input 
+      value="{{inputText}}" 
+      bindinput="onInput" 
+      placeholder="输入您的问题"
+    />
+    <button bindtap="sendMessage">发送</button>
+  </view>
+</view>
